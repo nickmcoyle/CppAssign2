@@ -1,0 +1,42 @@
+﻿  XxxTest.cpp
+  VectorGraphicTest.cpp
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(93): warning C4129: '<': unrecognized character escape sequence
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(93): warning C4129: '>': unrecognized character escape sequence
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(137): warning C4129: '<': unrecognized character escape sequence
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(137): warning C4129: '>': unrecognized character escape sequence
+  VectorGraphicStreamer.cpp
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(93): warning C4129: '<': unrecognized character escape sequence
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(93): warning C4129: '>': unrecognized character escape sequence
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(137): warning C4129: '<': unrecognized character escape sequence
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(137): warning C4129: '>': unrecognized character escape sequence
+  VectorGraphic.cpp
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\vectorgraphic.cpp(35): warning C4018: '>': signed/unsigned mismatch
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\vectorgraphic.cpp(68): warning C4018: '<': signed/unsigned mismatch
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\vectorgraphic.cpp(85): warning C4018: '<': signed/unsigned mismatch
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\vectorgraphic.cpp(108): warning C4018: '>': signed/unsigned mismatch
+  TestResult.cpp
+  TestRegistry.cpp
+  Test.cpp
+  PointTest.cpp
+  Point.cpp
+  ParseTest.cpp
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(93): warning C4129: '<': unrecognized character escape sequence
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(93): warning C4129: '>': unrecognized character escape sequence
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(137): warning C4129: '<': unrecognized character escape sequence
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(137): warning C4129: '>': unrecognized character escape sequence
+  MyVectorGraphicTest.cpp
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(93): warning C4129: '<': unrecognized character escape sequence
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(93): warning C4129: '>': unrecognized character escape sequence
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(137): warning C4129: '<': unrecognized character escape sequence
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(137): warning C4129: '>': unrecognized character escape sequence
+  MyPointTest.cpp
+  MyParseTest.cpp
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(93): warning C4129: '<': unrecognized character escape sequence
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(93): warning C4129: '>': unrecognized character escape sequence
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(137): warning C4129: '<': unrecognized character escape sequence
+c:\users\recovery\documents\education\uw c++\c++ advanced\assigment1\parse.h(137): warning C4129: '>': unrecognized character escape sequence
+  Main.cpp
+  Failure.cpp
+  Exception.cpp
+  Generating Code...
+  Assigment1.vcxproj -> C:\Users\Recovery\Documents\Education\UW C++\C++ Advanced\Assigment1\Debug\Assigment1.exe

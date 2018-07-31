@@ -1,0 +1,35 @@
+﻿  XmlWriterTest.cpp
+  XmlWriter.cpp
+  XmlReaderTest.cpp
+  XmlReader.cpp
+  VectorGraphicTest.cpp
+  VectorGraphicTestOld.cpp
+  VectorGraphicStreamer.cpp
+  VectorGraphic.cpp
+  tinyxml2.cpp
+  TestResult.cpp
+  TestRegistry.cpp
+  Test.cpp
+  SceneWriterTest.cpp
+  SceneWriter.cpp
+  SceneTest.cpp
+  SceneReaderTest.cpp
+  SceneReader.cpp
+  Scene.cpp
+  PointTest.cpp
+  Point.cpp
+  Generating Code...
+  Compiling...
+  PlacedGraphicTest.cpp
+  PlacedGraphic.cpp
+  ParseTest.cpp
+c:\users\ncoyle\downloads\cppassign2-master\parsetest.cpp(112): warning C4101: 're': unreferenced local variable
+  Parse.cpp
+  MyVectorGraphicTest.cpp
+  MyPointTest.cpp
+  MyParseTest.cpp
+  Main.cpp
+  Layer.cpp
+  Failure.cpp
+  Generating Code...
+  Assigment1.vcxproj -> C:\Users\ncoyle\Downloads\CppAssign2-master\x64\Debug\Assigment2.exe
