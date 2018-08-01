@@ -32,14 +32,15 @@ const char* const SceneXml = STR(
     </PlacedGraphic>
   </Layer>
 </Scene>);
-/*
+
 TEST(loadXml, XmlReader)
 {
+	
     std::stringstream xmlStream(SceneXml);
 
     Xml::HElement root = Xml::Reader::loadXml(xmlStream);
-
-    CHECK_EQUAL("Scene", root->getName());
+	
+	CHECK_EQUAL("Scene", root->getName());
     CHECK_EQUAL("800", root->getAttribute("width"));
     CHECK_EQUAL("600", root->getAttribute("height"));
     CHECK(root->getAttribute("depth").empty());
@@ -71,5 +72,5 @@ TEST(loadXml, XmlReader)
     CHECK_EQUAL(2, attributes.size());
     CHECK_EQUAL("0", placedGraphic->getAttribute("x"));
     CHECK_EQUAL("0", placedGraphic->getAttribute("y"));
+	
 }
-*/

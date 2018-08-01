@@ -1,17 +1,20 @@
 #pragma once
 #include "Attribute.h"
 #include <string>
+#include <list>
+#include "XmlReader.h"
 
 namespace VG {
 
 	class Element {
 	private:
 
-		typedef std::list<Attribute> AttributeCollection;
+		
+		typedef std::list <Element> ElementCollection;
 
 	public:
 		Element();
-		Element(std::stringstream xmlStream);
+		Element(std::stringstream const& xmlStream);
 
 		Element(const Element& other) = default;
 		Element(Element&& other) = default;
@@ -19,18 +22,18 @@ namespace VG {
 		Element & operator=(const Element&) = default;
 		Element & operator=(Element&&) = default;
 
-		Element const& getElementChildren() const;
+		ElementCollection const& getChildElements() const;		
 
-		bool hasTagName(std::string const& possibleTagName);
+		Xml::AttributeMap const& getAttributes() const;
 
-		Attribute const& getAttribute() const;
+		std::string const& getName();		
 		
-		std::string const& getAttributeName(std::string const& attributeName);
-		std::string const& getAttributeValue(std::string const& attributeName);
+		Attribute getAttribute(std::string const& attributeName);
+		
 
-	private:
-		AttributeCollection attributes;
+	private:		
+		ElementCollection elements;
 		std::string tagName;
 	};
-
+	
 }

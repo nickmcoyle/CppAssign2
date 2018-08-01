@@ -23,14 +23,20 @@ namespace VG
 		return  attributeValue;
 	}
 
-	bool operator==(const Attribute& lhs, const Attribute& rhs)
+	bool Attribute::empty()
 	{
-		return (lhs.getAttributeName() == rhs.getAttributeName() && lhs.getAttributeValue == rhs.getAttributeValue());
+		return !(attributeName.length() > 0);
+	}
+		
+	bool Attribute::operator==(const Attribute& rhs)
+	{
+		//return (&lhs.getAttributeName() == &rhs.getAttributeName() && &lhs.getAttributeValue == &rhs.getAttributeValue());
+		return true;
 	}
 
-	bool operator!=(const Attribute& lhs, const Attribute& rhs)
+	bool Attribute::operator!=(const Attribute& rhs)
 	{
-		return !(lhs == rhs);
+		return !(*this == rhs);
 	}
-
+	
 }

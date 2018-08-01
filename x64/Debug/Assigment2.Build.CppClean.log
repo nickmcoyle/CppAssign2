@@ -1,35 +1,43 @@
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\vc141.pdb
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\vc141.idb
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\point.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\pointtest.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\scene.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\scenereader.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\scenereadertest.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\scenetest.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\scenewriter.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\scenewritertest.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\test.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\testregistry.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\testresult.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\tinyxml2.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\vectorgraphic.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\vectorgraphicstreamer.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\vectorgraphictestold.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\vectorgraphictest.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\xmlreader.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\xmlreadertest.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\xmlwriter.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\xmlwritertest.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\failure.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\layer.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\main.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\myparsetest.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\mypointtest.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\myvectorgraphictest.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\parse.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\parsetest.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\placedgraphic.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\placedgraphictest.obj
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\assigment2.tlog\cl.command.1.tlog
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\assigment2.tlog\cl.read.1.tlog
-c:\users\ncoyle\downloads\cppassign2-master\x64\debug\assigment2.tlog\cl.write.1.tlog
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\vc141.pdb
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\vc141.idb
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\scenewritertest.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\scenewriter.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\scenetest.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\scenereadertest.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\scenereader.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\scene.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\pointtest.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\point.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\placedgraphictest.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\placedgraphic.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\parsetest.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\parse.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\myvectorgraphictest.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\mypointtest.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\myparsetest.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\main.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\layer.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\failure.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\element.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\attribute.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\xmlwritertest.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\xmlwriter.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\xmlreadertest.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\xmlreader.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\vectorgraphictest.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\vectorgraphictestold.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\vectorgraphicstreamer.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\vectorgraphic.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\tinyxml2.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\testresult.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\testregistry.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\test.obj
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\assigment2.ilk
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\assigment2.exe
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\assigment2.pdb
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\assigment2.tlog\cl.command.1.tlog
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\assigment2.tlog\cl.read.1.tlog
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\assigment2.tlog\cl.write.1.tlog
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\assigment2.tlog\link.command.1.tlog
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\assigment2.tlog\link.read.1.tlog
+c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\x64\debug\assigment2.tlog\link.write.1.tlog

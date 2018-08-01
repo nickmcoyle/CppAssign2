@@ -132,7 +132,7 @@
     <ClInclude Include="TestHarness.h" />
     <ClInclude Include="TestRegistry.h" />
     <ClInclude Include="TestResult.h" />
-    <ClInclude Include="tinyxml2.h" />
+    <ClInclude Include="TinyXML2\Include\tinyxml2.h" />
     <ClInclude Include="VectorGraphic.h" />
     <ClInclude Include="VectorGraphicStreamer.h" />
     <ClInclude Include="XmlReader.h" />
@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Attribute.cpp" />
+    <ClCompile Include="Element.cpp" />
     <ClCompile Include="Failure.cpp" />
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -161,7 +162,7 @@
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="TestRegistry.cpp" />
     <ClCompile Include="TestResult.cpp" />
-    <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="TinyXML2\Include\tinyxml2.cpp" />
     <ClCompile Include="VectorGraphic.cpp" />
     <ClCompile Include="VectorGraphicStreamer.cpp" />
     <ClCompile Include="VectorGraphicTestOld.cpp" />

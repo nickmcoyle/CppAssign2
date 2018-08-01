@@ -1,21 +1,50 @@
 #include "XmlReader.h"
-/*
+
 namespace Xml
 {
-
-	void Reader::loadXml(std::stringstream& xml)
+	
+	HElement Reader::loadXml(const char* xml)
 	{
 
-	XMLDocument doc;
-	doc.Parse(xml);
+	XMLDocument xmlDoc; //empty XML document to store the data from the file
+	xmlDoc.Parse(xml);
+	//XMLError eResult = xmlDoc.LoadFile("MyVectorGraphic.xml");
 
-	XMLElement* titleElement = doc.FirstChildElement("PLAY")->FirstChildElement("TITLE");
-	const char* title = titleElement->GetText();
-	
+	XMLNode * rootPtr = xmlDoc.FirstChild();
+	//if (rootPtr == nullptr)
+		//return XML_ERROR_FILE_READ_ERROR;	
 
-	XMLText* textNode = titleElement->FirstChild()->ToText();
-	title = textNode->Value();
-	
+	XMLElement* elementPtr = xmlDoc.FirstChildElement("Layer");
+	const char* layerAlias = elementPtr->GetText();	
+
+	//return XML_SUCCESS;
+	HElement el(new VG::Element);
+
+	return el;
+	}
+
+	HElement Reader::loadXml(std::stringstream& xml)
+	{
+		XMLDocument xmlDoc; //empty XML document to store the data from the file
+		xml >> xmlDoc;
+		
+		/*
+		const char* xmlChar;
+		xml << xmlChar;
+		xmlDoc.Parse(xmlChar);
+		*/
+		
+		//return XML_SUCCESS;
+		HElement el(new VG::Element);
+		return el;
+	}
+
+	Reader::Reader() 
+	{}
+
+	std::stringstream& operator>>(std::stringstream& in, XMLNode & base)
+	{
+		//in >> base;
+		return in;
 	}
 }
-*/

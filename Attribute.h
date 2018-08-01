@@ -1,9 +1,12 @@
 #pragma once
 #include <string>
+#include <list>
 
 namespace VG {
 
 	class Attribute {
+	private:
+		
 	public:
 		Attribute();
 		Attribute(std::string const& attributeName, std::string const& attributeValue);
@@ -15,15 +18,17 @@ namespace VG {
 		Attribute & operator=(Attribute&&) = default;
 
 		std::string const& getAttributeName() const;	
-		std::string const& getAttributeValue() const;		
+		std::string const& getAttributeValue() const;
+
+		bool empty();
+		
+		bool operator==(const Attribute& rhs);
+		bool operator!=(const Attribute& rhs);
 
 	private:
 		std::string attributeName;
-		std::string attributeValue;
+		std::string attributeValue;		
 	};
-
-	bool operator==(const Attribute& lhs, const Attribute& rhs);
-	bool operator!=(const Attribute& lhs, const Attribute& rhs);
 
 	
 }
