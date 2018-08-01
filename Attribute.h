@@ -2,7 +2,8 @@
 #include <string>
 #include <list>
 
-namespace VG {
+namespace VG
+{
 
 	class Attribute {
 	private:

@@ -1,36 +1,51 @@
-#include "Element.h"
+﻿#include "Element.h"
 #include <algorithm>
 
-namespace VG {
+namespace VG 
+{
 
 	Element::Element() 
 	{}
 
-	Element::Element(std::stringstream const& xmlStream)
+	Element::Element(std::string name)
+		:name(name)		
 	{}
 
 	Element::ElementCollection const& Element::getChildElements() const
 	{
 		//elements.push_back("");
-		return elements;
+		return childElements;
 	}
 
 	std::string const& Element::getName()
 	{
-		return tagName;
+		return name;
 	}		
-	
+	/*
 	Xml::AttributeMap const& Element::getAttributes() const
 	{
 		//scan for attributes?
-		Xml::AttributeMap attrMap( new Xml::AttributeMap() );
+		Xml::AttributeMap AttributeMap(new Xml::AttributeMap());
 		return attrMap;
 	}
-	
-	Attribute Element::getAttribute(std::string const& attributeName)
+	*/
+	std::string const Element::getAttribute(std::string const& attributeName)
 	{		
-		Attribute attr(attributeName, "");
-		return attr;
+		AttributeCollection::iterator it = attributes.begin();
+		while (it != attributes.end())
+		{
+			if ((*it).getAttributeName() == attributeName)
+			{
+				return (*it).getAttributeValue();
+			}
+			++it;
+		}		
+		return "";
+	}
+
+	void Element::addAttribute(Attribute const& attribute)
+	{
+		attributes.push_back(attribute);
 	}
 			
 }

@@ -1,4 +1,4 @@
-#include "XmlReader.h"
+﻿#include "XmlReader.h"
 
 namespace Xml
 {
@@ -7,37 +7,49 @@ namespace Xml
 	{
 
 	XMLDocument xmlDoc; //empty XML document to store the data from the file
-	xmlDoc.Parse(xml);
-	//XMLError eResult = xmlDoc.LoadFile("MyVectorGraphic.xml");
-
-	XMLNode * rootPtr = xmlDoc.FirstChild();
-	//if (rootPtr == nullptr)
-		//return XML_ERROR_FILE_READ_ERROR;	
-
-	XMLElement* elementPtr = xmlDoc.FirstChildElement("Layer");
-	const char* layerAlias = elementPtr->GetText();	
-
-	//return XML_SUCCESS;
-	HElement el(new VG::Element);
+	xmlDoc.Parse(xml);	
+	XMLNode * rootPtr = xmlDoc.FirstChildElement("Scene");	
+	
+	HElement el(new VG::Element());
 
 	return el;
 	}
 
 	HElement Reader::loadXml(std::stringstream& xml)
-	{
-		XMLDocument xmlDoc; //empty XML document to store the data from the file
-		xml >> xmlDoc;
+	{		 
+		XMLDocument myDoc; //empty XML document to store the data from the file
 		
-		/*
-		const char* xmlChar;
-		xml << xmlChar;
-		xmlDoc.Parse(xmlChar);
-		*/
-		
-		//return XML_SUCCESS;
-		HElement el(new VG::Element);
-		return el;
+		auto result = myDoc.Parse(xml.str().c_str());
+			
+		auto root = myDoc.RootElement();
+		auto attr = root->FirstAttribute();
+
+		HElement hElement(new VG::Element(root->Name()));
+
+		while (attr != nullptr)
+		{
+			VG::Attribute attribute(attr->Name(), attr->Value());
+			(*hElement).addAttribute(attribute);
+			attr = attr->Next();
+		}	
+
+		//auto 
+				
+		return hElement;
 	}
+
+	/*
+	getAttribute()
+	{
+		if (rootPtr)
+		{
+
+			//int width = rootPtr->FirstChild.attribute("width");
+			// = rootPtr->FirstChildElement("Layer")->Attribute("alias");
+		}
+
+	}
+	*/
 
 	Reader::Reader() 
 	{}
