@@ -11,9 +11,13 @@ namespace VG
 		:name(name)		
 	{}
 
-	Element::ElementCollection const& Element::getChildElements() const
+	void Element::addChildElement(HElement const& element)
 	{
-		//elements.push_back("");
+		childElements.push_back(element);
+	}
+
+	Element::ElementCollection const& Element::getChildElements() const
+	{		
 		return childElements;
 	}
 
@@ -21,14 +25,20 @@ namespace VG
 	{
 		return name;
 	}		
-	/*
-	Xml::AttributeMap const& Element::getAttributes() const
+	
+	std::map<std::string, std::string> const Element::getAttributes()
 	{
-		//scan for attributes?
-		Xml::AttributeMap AttributeMap(new Xml::AttributeMap());
-		return attrMap;
+		std::map<std::string, std::string> attributeMap;
+		AttributeCollection::iterator it = attributes.begin();
+
+		while (it != attributes.end())
+		{
+			attributeMap.emplace((*it).getAttributeName(), (*it).getAttributeValue());
+			++it;
+		}
+		return attributeMap;
 	}
-	*/
+	
 	std::string const Element::getAttribute(std::string const& attributeName)
 	{		
 		AttributeCollection::iterator it = attributes.begin();
@@ -47,5 +57,19 @@ namespace VG
 	{
 		attributes.push_back(attribute);
 	}
-			
+	/*
+	HElement& Element::operator[](int index)
+	{
+		if (index >= children.size() || index < 0)
+		{
+			throw std::runtime_error{ "Index out of range: attempt to access ElementList" };
+		}
+		ElementList::iterator it = children.begin();
+		for (int i = 0; i < index; ++i)
+		{
+			++it;
+		}
+		return (*it);
+	}
+		*/	
 }

@@ -173,6 +173,9 @@
     <ClCompile Include="TinyXML2\Include\tinyxml2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MyXmlReaderTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="VectorGraphic.xml" />

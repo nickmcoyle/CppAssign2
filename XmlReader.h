@@ -3,31 +3,32 @@
 #include "Attribute.h"
 #include "TinyXML2\Include\tinyxml2.h"
 #include <memory>
+#include <map>
 #include <sstream>
 #include <string>
 
 using namespace tinyxml2;
 
 namespace Xml
-{		
-	using AttributeMap = std::list<VG::Attribute>;
-	using ElementList = std::list<VG::Element>;
+{
 	using HElement = std::shared_ptr<VG::Element>;
-
+	using ElementList = std::list<HElement>;
+	using AttributeMap = std::map<std::string, std::string>;
+	
 	class Reader
-	{	
-	public:	
+	{
+	public:
 		Reader();
 
 		static HElement loadXml(const char* xml);
-		static HElement loadXml(std::stringstream& xml);
+		static HElement loadXml(std::stringstream& xml);			
 
-		//VG::Attribute operator[](const char* attribute) const;	
-			
+		//HElement const& operator[](int index);
+
 	private:
 		AttributeMap attributes;
-		ElementList elements;		
-	};
-
-	std::stringstream& operator>>(std::stringstream& in, XMLNode & base);	
+		ElementList children;	
+		
+	};	
+	
 }

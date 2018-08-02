@@ -45,24 +45,24 @@ TEST(loadXml, XmlReader)
     CHECK_EQUAL("600", root->getAttribute("height"));
     CHECK(root->getAttribute("depth").empty());	
 
-	/*
+	
     Xml::AttributeMap attributes = root->getAttributes();
     CHECK(!attributes.empty());
     CHECK_EQUAL(2, attributes.size());
     CHECK_EQUAL("800", attributes["width"])
     CHECK_EQUAL("600", attributes["height"])
-
+	 
     Xml::ElementList children = root->getChildElements();
     CHECK(!children.empty());
     CHECK_EQUAL(2, children.size());
-
+	/*
     Xml::HElement layer0 = children[0];
     CHECK_EQUAL("Layer", layer0->getName());
     attributes = layer0->getAttributes();
     CHECK(!attributes.empty());
     CHECK_EQUAL(1, attributes.size());
     CHECK_EQUAL("sky", layer0->getAttribute("alias"));
-
+	/*
     Xml::ElementList layerChildren = layer0->getChildElements();
     CHECK(!layerChildren.empty());
     CHECK_EQUAL(2, layerChildren.size());
