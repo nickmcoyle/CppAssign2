@@ -15,13 +15,13 @@ namespace Framework
 	Scene::Scene()
 		:width(0),
 		height(0),
-		layers({10})
+		layers({0})
 	{}
 
 	Scene::Scene(int width, int height)
 		:width(width),
 		height(height),
-		layers({10})
+		layers({0})
 	{}
 
 	void Scene::pushBack(Layer const& layer) 

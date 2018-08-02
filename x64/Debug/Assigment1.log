@@ -1,2 +1,4 @@
-﻿  XmlReader.cpp
-c:\users\nick coyle\documents\education\c++uw\uw c++\c++ advanced\assignment2\xmlreader.cpp(19): error C4716: 'Xml::getChildren': must return a value
+﻿  SceneReader.cpp
+  Scene.cpp
+  Generating Code...
+  Assigment1.vcxproj -> C:\Users\ncoyle\Downloads\CppAssign2-master\x64\Debug\Assigment2.exe

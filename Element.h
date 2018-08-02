@@ -4,16 +4,18 @@
 #include <string>
 #include <list>
 #include <memory>
+#include <vector>
 
-namespace VG 
+namespace Xml
 {
 	
-	class Element {
-		
-	private:
+	class Element {		
+	public:
 		using HElement = std::shared_ptr<Element>;
-		using ElementCollection = std::list <HElement>;
-		using AttributeCollection = std::list <Attribute>;
+		using ElementList = std::vector<HElement>;
+
+	private:
+		using AttributeCollection = std::list <Attribute>;	
 
 	public:
 		Element();		
@@ -27,7 +29,7 @@ namespace VG
 
 		void addChildElement(HElement const& element);
 
-		ElementCollection const& getChildElements() const;		
+		ElementList const& getChildElements() const;		
 		
 	    std::map<std::string, std::string> const getAttributes();
 
@@ -38,7 +40,7 @@ namespace VG
 		
 
 	private:				
-		ElementCollection childElements;
+		ElementList children;
 		AttributeCollection attributes;
 		std::string name;
 	};

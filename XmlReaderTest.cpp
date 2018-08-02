@@ -55,15 +55,18 @@ TEST(loadXml, XmlReader)
     Xml::ElementList children = root->getChildElements();
     CHECK(!children.empty());
     CHECK_EQUAL(2, children.size());
-	/*
+	
+
     Xml::HElement layer0 = children[0];
     CHECK_EQUAL("Layer", layer0->getName());
     attributes = layer0->getAttributes();
     CHECK(!attributes.empty());
     CHECK_EQUAL(1, attributes.size());
     CHECK_EQUAL("sky", layer0->getAttribute("alias"));
-	/*
-    Xml::ElementList layerChildren = layer0->getChildElements();
+	
+	
+
+    Xml::ElementList layerChildren = layer0->getChildElements();	
     CHECK(!layerChildren.empty());
     CHECK_EQUAL(2, layerChildren.size());
     Xml::HElement placedGraphic = layerChildren[0];
@@ -73,5 +76,5 @@ TEST(loadXml, XmlReader)
     CHECK_EQUAL(2, attributes.size());
     CHECK_EQUAL("0", placedGraphic->getAttribute("x"));
     CHECK_EQUAL("0", placedGraphic->getAttribute("y"));
-	*/
+	
 }

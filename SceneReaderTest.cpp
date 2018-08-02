@@ -36,12 +36,12 @@ const std::string TestXml = R"(
   </Layer>
 </Scene>)";
 
-/*
+
 TEST(ReadScene, SceneReader)
 {
     std::stringstream xmlStream(TestXml);
     auto root = Xml::Reader::loadXml(xmlStream);
-
+	
     auto s = Framework::SceneReader::readScene(*root);
 
     CHECK_EQUAL(800, s.getWidth());
@@ -62,7 +62,7 @@ TEST(ReadScene, SceneReader)
                 if (iGraphic == 0)
                 {
                     CHECK_EQUAL(VG::Point(0, 0), (*graphic).getPlacementPoint());
-                    auto vg = (*graphic).getGraphic();
+                    auto vg = (*graphic).getGraphic();					
                     CHECK_EQUAL(true, vg.isClosed());
                     CHECK_EQUAL(3, vg.getPointCount());
                     CHECK_EQUAL(VG::Point(1, 2), vg.getPoint(0));
@@ -97,4 +97,3 @@ TEST(ReadScene, SceneReader)
     // Expect 2 layers
     CHECK_EQUAL(2, numberOfLayers);
 }
-*/

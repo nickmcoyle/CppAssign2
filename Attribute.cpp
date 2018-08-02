@@ -1,6 +1,6 @@
 #include "Attribute.h"
 
-namespace VG
+namespace Xml
 {
 
 	Attribute::Attribute()

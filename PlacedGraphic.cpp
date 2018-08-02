@@ -29,14 +29,14 @@ namespace Framework {
 		this->graphic = graphic;		
 	}	
 	
-	HVectorGraphic const& PlacedGraphic::getGraphic() const
+	VectorGraphic const& PlacedGraphic::getGraphic() const
 	{
-		return graphic; 
+		return (*graphic); 
 	};
 
 	bool PlacedGraphic::operator==(const PlacedGraphic& rhs) const
 	{
-		return (placementPoint == rhs.getPlacementPoint() && graphic == rhs.getGraphic());
+		return (placementPoint == rhs.getPlacementPoint() && (*graphic) == rhs.getGraphic());
 	}
 
 	bool PlacedGraphic::operator!=(const PlacedGraphic& rhs) const

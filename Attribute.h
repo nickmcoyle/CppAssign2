@@ -1,9 +1,11 @@
 #pragma once
 #include <string>
 #include <list>
+#include <map>
 
-namespace VG
+namespace Xml
 {
+	using AttributeMap = std::map<std::string, std::string>;
 
 	class Attribute {
 	private:
@@ -29,6 +31,7 @@ namespace VG
 	private:
 		std::string attributeName;
 		std::string attributeValue;		
+		AttributeMap attributes;		
 	};
 
 	

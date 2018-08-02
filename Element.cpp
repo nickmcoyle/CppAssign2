@@ -1,7 +1,7 @@
 ﻿#include "Element.h"
 #include <algorithm>
 
-namespace VG 
+namespace Xml
 {
 
 	Element::Element() 
@@ -13,12 +13,12 @@ namespace VG
 
 	void Element::addChildElement(HElement const& element)
 	{
-		childElements.push_back(element);
+		children.push_back(element);
 	}
 
-	Element::ElementCollection const& Element::getChildElements() const
+	Element::ElementList const& Element::getChildElements() const
 	{		
-		return childElements;
+		return children;
 	}
 
 	std::string const& Element::getName()

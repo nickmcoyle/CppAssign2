@@ -5,7 +5,7 @@
 TEST(trimSpaceMiddle, Parse)
 {
 	std::string actual{ "  \tHello Hello" };
-	Parse::trim(actual, "\t\n");
+	Parse::trim(actual, " \t\n");
 
 	CHECK_EQUAL("Hello Hello", actual);
 }
@@ -13,15 +13,15 @@ TEST(trimSpaceMiddle, Parse)
 TEST(trimBoundary, Parse)
 {
 	std::string actual{ "  \tHello<VectorGraphic/> Hello" };
-	Parse::trim(actual, "\t\n");
+	Parse::trim(actual, " \t\n");
 
 	CHECK_EQUAL("Hello<VectorGraphic/> Hello", actual);
 }
 
 TEST(trimBoundaryJunkCharacters, Parse)
 {
-	std::string actual{ "  \tHello<&&=>=&*)\t(\nW#$% Hello" };
-	Parse::trim(actual, "\t\n");
+	std::string actual{ "  \tHello<&&=>=&*)(W#$% Hello" };
+	Parse::trim(actual, " \t\n");
 
 	CHECK_EQUAL("Hello<&&=>=&*)(W#$% Hello", actual);
 }

@@ -34,7 +34,7 @@ const char* const SceneXml = STR(
   </Layer>
 </Scene>);
 
-/*
+
 TEST(writeXml, XmlWriter)
 {
     std::stringstream xmlStream(SceneXml);
@@ -44,5 +44,3 @@ TEST(writeXml, XmlWriter)
     // TODO: find a good automated way to verify instead of looking at cout.
     // Strings don't have to be equal, so string comparison wouldn't work well.
 }
-
-*/
