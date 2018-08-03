@@ -12,7 +12,7 @@ namespace VG
     {
     public:
         VectorGraphic();
-        
+		        
 		VectorGraphic(const VectorGraphic& other) = default;
 		VectorGraphic(VectorGraphic&& other) = default;
 

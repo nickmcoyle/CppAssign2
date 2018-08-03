@@ -32,7 +32,7 @@ namespace Xml
 		auto root = myDoc.RootElement();
 		if (root == nullptr)
 		{
-			throw std::runtime_error{ "Invalid xml: cannot find root element" };
+			throw std::invalid_argument{ "Invalid xml: cannot find root element" };
 		}		
 				
 		HElement hElement(new Element(root->Name()));

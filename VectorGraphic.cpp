@@ -8,7 +8,7 @@ namespace VG
     myShapeStyle{ShapeStyle::Closed}
     {
     }
-    
+	    
     bool VectorGraphic::isOpen() const
     {
         return myShapeStyle == ShapeStyle::Open;

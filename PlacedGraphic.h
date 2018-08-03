@@ -10,7 +10,7 @@ namespace Framework {
 		
 	public:
 		PlacedGraphic();
-		PlacedGraphic(Point const& placement, HVectorGraphic vg);
+		PlacedGraphic(const Point& placement, HVectorGraphic vg);
 
 		PlacedGraphic(const PlacedGraphic& other) = default;
 		PlacedGraphic(PlacedGraphic&& other) = default;

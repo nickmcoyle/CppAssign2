@@ -46,7 +46,8 @@ namespace Framework
 			{
 				it++;
 			}
-		}
+		}		
+			throw std::invalid_argument("the placed graphic to remove does not appear in the layer.");
 
 	};
 

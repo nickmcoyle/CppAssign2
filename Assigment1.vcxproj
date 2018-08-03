@@ -146,6 +146,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MyParseTest.cpp" />
     <ClCompile Include="MyPointTest.cpp" />
+    <ClCompile Include="MySceneReaderTest.cpp" />
     <ClCompile Include="MyVectorGraphicTest.cpp" />
     <ClCompile Include="MyXmlReaderTest.cpp" />
     <ClCompile Include="Parse.cpp" />

@@ -176,6 +176,9 @@
     <ClCompile Include="MyXmlReaderTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MySceneReaderTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="VectorGraphic.xml" />

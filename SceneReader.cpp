@@ -1,5 +1,6 @@
 #include "SceneReader.h"
 
+
 namespace Framework
 {
 
@@ -8,27 +9,72 @@ namespace Framework
 
 	Scene SceneReader::readScene(Xml::Element& root)
 	{
-		Scene scene(atoi(root.getAttribute("width").c_str()), atoi(root.getAttribute("height").c_str()));
-	
-		Xml::ElementList layers = root.getChildElements();
-		//Xml::ElementList placedGraphics =
-			//Xml::ElementList vectorGraphics =
-			//Xml::ElementList points =
-				
-		for (int i = 0; i < layers.size(); ++i)
-		{			
-			Xml::ElementList placedGraphics = (*layers[i]).getChildElements();
-			for (int i = 0; i < placedGraphics.size(); ++i)
-			{
-				int x = atoi((*placedGraphics[i]).getAttribute("x").c_str());
-				int y = atoi((*placedGraphics[i]).getAttribute("y").c_str());
-			}
-			Layer layer((*layers[i]).getAttribute("alias"));
-
-			scene.pushBack(layer);
+		int sceneWidth = atoi(root.getAttribute("width").c_str());
+		int sceneHeight = atoi(root.getAttribute("height").c_str());
+		if (!sceneWidth || !sceneHeight)
+		{
+			throw std::invalid_argument("the scene is missing a valid width or height.");
 		}
-		int i = 0;
-		return scene;
+
+		Scene myScene(sceneWidth,sceneHeight);
+	
+		Xml::ElementList layers = root.getChildElements();		
+				
+		for (const auto& layer : layers)
+		{				
+			std::string layerAlias = (*layer).getAttribute("alias");
+			
+			if (layerAlias == "") 
+			{
+				throw std::invalid_argument("scene is missing valid layer tags.");
+			}
+			Layer myLayer(layerAlias);
+
+			Xml::ElementList placedGraphics = (*layer).getChildElements(); //get all placed graphics of this layer
+			
+			for (const auto& placedGraphic : placedGraphics)
+			{				
+				int x = atoi((*placedGraphic).getAttribute("x").c_str());
+				int y = atoi((*placedGraphic).getAttribute("y").c_str());
+				if (!x || !y)
+				{
+					throw std::invalid_argument("the placedgraphic is missing a valid x and y placement point.");
+				}
+				VG::Point placementPoint(x, y);
+				
+				Xml::ElementList vectorGraphics = (*placedGraphic).getChildElements(); //get all vector graphics inside placed graphic
+				
+				HVectorGraphic myVG(new VG::VectorGraphic);				
+
+					for (const auto& vectorGraphic : vectorGraphics)
+					{
+						std::string openClosed = (*vectorGraphic).getAttribute("closed");						 
+						if (openClosed.compare("true") != 0 && openClosed.compare("false") != 0 )
+						{
+							throw std::invalid_argument("the vectorgraphic is missing a valid shapestyle tag.");
+						}
+
+						(openClosed.compare("true") == 0) ? (*myVG).closeShape() : (*myVG).openShape();
+
+						Xml::ElementList points = (*vectorGraphic).getChildElements(); //get all points inside vector graphic				 						
+						
+						for (const auto& point : points)
+						{		
+							int x = atoi((*point).getAttribute("x").c_str());
+							int y = atoi((*point).getAttribute("y").c_str());							
+							if (!x || !y)
+							{
+								throw std::invalid_argument("the point is missing a valid x and y coordinate.");
+							}
+							(*myVG).addPoint(Point(x, y));
+						}									
+					}	
+				PlacedGraphic myPG(placementPoint, myVG);
+				myLayer.insert(myPG);
+			}
+			myScene.pushBack(myLayer);
+		}		
+		return myScene;
 	}
 
 }
