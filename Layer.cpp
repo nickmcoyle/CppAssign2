@@ -48,8 +48,12 @@ namespace Framework
 			}
 		}		
 			throw std::invalid_argument("the placed graphic to remove does not appear in the layer.");
-
 	};
+
+	const Layer::PlacedGraphicCollection& Layer::getPlacedGraphics() const
+	{
+		return graphics;
+	}
 
 	void Layer::setAlias(std::string const& alias)
 	{

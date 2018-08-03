@@ -51,6 +51,11 @@ namespace Framework
 		}
 
 	}
+	
+	const Scene::LayerCollection& Scene::getLayers()
+	{
+		return layers;
+	}
 
 	void Scene::setWidth(int const& width)
 	{

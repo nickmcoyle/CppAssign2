@@ -36,7 +36,7 @@ const char* const TestXml = STR(
   </Layer>
 </Scene>);
 
-/*
+
 TEST(WriteScene, SceneWriter)
 {
     std::stringstream xmlStream(TestXml);
@@ -95,4 +95,3 @@ TEST(WriteScene, SceneWriter)
     CHECK_EQUAL("5", pointElements[2]->getAttribute("x"));
     CHECK_EQUAL("6", pointElements[2]->getAttribute("y"));
 }
-*/

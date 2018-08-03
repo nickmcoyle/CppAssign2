@@ -28,7 +28,9 @@ namespace Framework
 		void pushBack(Layer const& layer);
 		void pushBack(Layer&& layer);
 		void remove(Layer const& layer);
-			
+		
+		const LayerCollection& getLayers();
+
 		void setWidth(int const& width);
 		int const& getWidth() const;
 		

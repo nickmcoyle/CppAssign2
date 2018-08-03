@@ -5,66 +5,79 @@ namespace Xml
 	Writer::Writer()
 	{}
 
-	
-	const HElement Writer::writeXml(HElement root, std::ostream& stream)
-	{
-		/*
-		XMLDocument myDoc; //empty XML document to store the data from the file
+	void Writer::writeXml(HElement root)
+	{	
+		XMLDocument myDoc;
 
-		auto result = myDoc.Parse(xml.str().c_str());
-		if (result != XML_SUCCESS)
-		{
-			throw std::runtime_error{ "Could not load xml: file read error" };
-		}
+		auto sceneElem = myDoc.NewElement("Scene");
+		sceneElem->SetAttribute("width", 1);
+		sceneElem->SetText("Some text");
+		myDoc.InsertEndChild(sceneElem);
 
-		auto root = myDoc.RootElement();
-		if (root == nullptr)
-		{
-			throw std::runtime_error{ "Invalid xml: cannot find root element" };
-		}
-
-		HElement hElement(new Element(root->Name()));
-		auto attr = root->FirstAttribute();
-		while (attr != nullptr)
-		{
-			(*hElement).addAttribute(Attribute(attr->Name(), attr->Value()));
-			attr = attr->Next();
-		}
-
-		auto layerChild = root->FirstChildElement();
-
-		while (layerChild != nullptr)
-		{
-			HElement layerElement = getElementAndAttributes(layerChild);
-			auto placedGraphicChild = layerChild->FirstChildElement();
-			while (placedGraphicChild != nullptr)
-			{
-				HElement placedGraphicElement = getElementAndAttributes(placedGraphicChild);
-				auto vectorGraphicChild = placedGraphicChild->FirstChildElement();
-				while (vectorGraphicChild != nullptr)
-				{
-					HElement vectorGraphicElement = getElementAndAttributes(vectorGraphicChild);
-					auto pointChild = vectorGraphicChild->FirstChildElement();
-					while (pointChild != nullptr)
-					{
-						HElement pointElement = getElementAndAttributes(pointChild);
-						(*vectorGraphicElement).addChildElement(pointElement);
-						pointChild = pointChild->NextSiblingElement();
-					}
-					(*placedGraphicElement).addChildElement(vectorGraphicElement);
-					vectorGraphicChild = vectorGraphicChild->NextSiblingElement();
-				}
-				(*layerElement).addChildElement(placedGraphicElement);
-				placedGraphicChild = placedGraphicChild->NextSiblingElement();
-			}
-			(*hElement).addChildElement(layerElement);
-			layerChild = layerChild->NextSiblingElement();
-
-		}
-		*/
-		HElement hElement(new Element());
-		return hElement;
+		myDoc.SaveFile("output.xml");
 		
+	}
+
+	std::ostream& Writer::writeXml(HElement root, std::ostream& stream)
+	{
+		XMLDocument myDoc;
+
+		auto hScene = (*root);
+		auto sceneElem = myDoc.NewElement("Scene");			
+		sceneElem->SetAttribute("width", hScene.getAttribute("width").c_str());
+		sceneElem->SetAttribute("height", hScene.getAttribute("height").c_str());
+		myDoc.InsertFirstChild(sceneElem);
+
+		auto hLayers = (*root).getChildElements();
+
+		for (const auto& layer : hLayers)
+		{
+			auto layerElem = myDoc.NewElement("Layer");
+			layerElem->SetAttribute("alias", (*layer).getAttribute("alias").c_str());
+			if(myDoc.FirstChildElement("Scene")->FirstChildElement("Layer") != nullptr)
+			{
+				myDoc.FirstChildElement("Scene")->LastChildElement("Layer")->InsertFirstChild(layerElem);
+			}
+			else {
+				myDoc.FirstChildElement("Scene")->InsertFirstChild(layerElem);
+			}
+
+				auto hPlacedGraphics = (*layer).getChildElements();
+				for (const auto& placedGraphic : hPlacedGraphics)
+				{
+					auto placedGraphicElem = myDoc.NewElement("PlacedGraphic");
+					placedGraphicElem->SetAttribute("x", (*placedGraphic).getAttribute("x").c_str());
+					placedGraphicElem->SetAttribute("y", (*placedGraphic).getAttribute("y").c_str());
+					myDoc.FirstChildElement("Scene")->LastChildElement("Layer")->InsertFirstChild(placedGraphicElem);
+
+					auto hVectorGraphics = (*placedGraphic).getChildElements();
+					for (const auto& vectorGraphic : hVectorGraphics)
+					{
+						auto vectorGraphicElem = myDoc.NewElement("VectorGraphic");
+						vectorGraphicElem->SetAttribute("closed", (*vectorGraphic).getAttribute("closed").c_str());
+						myDoc.FirstChildElement("Scene")->FirstChildElement("Layer")->FirstChildElement("PlacedGraphic")->InsertFirstChild(vectorGraphicElem);
+
+							auto hPoints = (*vectorGraphic).getChildElements();
+							for (const auto& point : hPoints)
+							{
+								auto pointElem = myDoc.NewElement("Point");
+								pointElem->SetAttribute("x", (*point).getAttribute("x").c_str());
+								pointElem->SetAttribute("y", (*point).getAttribute("y").c_str());
+								myDoc.FirstChildElement("Scene")->FirstChildElement("Layer")->FirstChildElement("PlacedGraphic")->FirstChildElement("VectorGraphic")->InsertEndChild(pointElem);
+							}
+							
+					}
+					
+				}
+				
+				
+		}		
+		
+		int i = 0;
+		//myDoc.Print(stream);
+		//tinyxml2::dump_to_stdout(&mydoc);
+		myDoc.SaveFile("output.xml");
+		return stream;
 	}
 
 

@@ -33,9 +33,11 @@
 			void insert(PlacedGraphic&& placedGraphic);
 			void remove(PlacedGraphic const& placedGraphic);
 
+			const PlacedGraphicCollection& getPlacedGraphics() const;
+
 			void setAlias(std::string const& alias);
 			void setAlias(std::string&& alias);
-			std::string const& getAlias() const;
+			std::string const& getAlias() const;			
 
 			bool operator==(const Layer& rhs) const;
 			bool operator!=(const Layer& rhs) const;

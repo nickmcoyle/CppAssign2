@@ -67,6 +67,11 @@ namespace VG
         return myPath.at(index); // throws std::out_of_range if index out of range
     }
     
+	const Points& VectorGraphic::getPoints() const
+	{
+		return myPath;
+	}
+
     void VectorGraphic::removePoint(const Point& p)
     {
 		auto newEnd = std::remove(myPath.begin(), myPath.end(), p);

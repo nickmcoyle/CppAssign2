@@ -33,11 +33,11 @@ namespace Framework
 			Xml::ElementList placedGraphics = (*layer).getChildElements(); //get all placed graphics of this layer
 			
 			for (const auto& placedGraphic : placedGraphics)
-			{				
-				int x = atoi((*placedGraphic).getAttribute("x").c_str());
-				int y = atoi((*placedGraphic).getAttribute("y").c_str());
-				if (!x || !y)
-				{
+			{	
+				int x = std::stoi((*placedGraphic).getAttribute("x"));				
+				int y = std::stoi((*placedGraphic).getAttribute("y"));				
+				if(x < 0 || y < 0)
+				{					
 					throw std::invalid_argument("the placedgraphic is missing a valid x and y placement point.");
 				}
 				VG::Point placementPoint(x, y);
@@ -60,9 +60,9 @@ namespace Framework
 						
 						for (const auto& point : points)
 						{		
-							int x = atoi((*point).getAttribute("x").c_str());
-							int y = atoi((*point).getAttribute("y").c_str());							
-							if (!x || !y)
+							int x = std::stoi((*point).getAttribute("x"));
+							int y = std::stoi((*point).getAttribute("y"));							
+							if (x < 0 || y < 0)
 							{
 								throw std::invalid_argument("the point is missing a valid x and y coordinate.");
 							}

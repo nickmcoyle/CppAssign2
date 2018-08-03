@@ -35,6 +35,8 @@ namespace VG
         
         std::size_t getPointCount() const;
         const Point& getPoint(int index) const;
+
+		const Points& getPoints() const;
         
         bool operator==(const VectorGraphic& rhs) const;
         bool operator!=(const VectorGraphic& rhs) const;
