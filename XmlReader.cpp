@@ -43,8 +43,17 @@ namespace Xml
 			attr = attr->Next();
 		}		
 
-		auto layerChild = root->FirstChildElement();
+		/*
+		const XMLNode* node = root->FirstChild();		
+		if (auto comment = dynamic_cast<const XMLComment*>(node))
+		{			
+			const char* commentText = comment->Value();
+			int i = 0;
+		}
+		*/
 
+		auto layerChild = root->FirstChildElement();
+		
 		while (layerChild != nullptr)
 		{				
 			HElement layerElement = getElementAndAttributes(layerChild);
@@ -52,7 +61,7 @@ namespace Xml
 				while (placedGraphicChild != nullptr)
 				{
 					HElement placedGraphicElement = getElementAndAttributes(placedGraphicChild);
-						auto vectorGraphicChild = placedGraphicChild->FirstChildElement();
+						auto vectorGraphicChild = placedGraphicChild->FirstChildElement();						
 						while (vectorGraphicChild != nullptr)
 						{
 							HElement vectorGraphicElement = getElementAndAttributes(vectorGraphicChild);

@@ -31,10 +31,10 @@ namespace Framework
 		
 		const LayerCollection& getLayers();
 
-		void setWidth(int const& width);
+		void setWidth(int width);
 		int const& getWidth() const;
 		
-		void setHeight(int const& height);
+		void setHeight(int height);
 		int const& getHeight() const;
 
 	private:

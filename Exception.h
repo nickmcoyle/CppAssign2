@@ -1,3 +1,4 @@
+/*
 #pragma once
 #include <iostream>
 #include <exception>
@@ -148,3 +149,4 @@ inline const char* Invalid::what() const throw()
 {
 	return "Error: Invalid Cast";
 }
+*/

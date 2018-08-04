@@ -8,15 +8,39 @@ namespace Framework {
 	{
 	}
 
-	PlacedGraphic::PlacedGraphic(const Point& placement, HVectorGraphic vg)	
+	PlacedGraphic::PlacedGraphic(const Point& placement, const HVectorGraphic& vg)	
 		: placementPoint(placement),
 		graphic(vg)
 	{
 	}
 
-	void PlacedGraphic::setPlacementPoint(Point const& placement) 
+	PlacedGraphic::PlacedGraphic(Point&& placement, const HVectorGraphic& vg)
+		: placementPoint(std::move(placement)),
+		graphic(vg)
+	{
+	}
+
+	PlacedGraphic::PlacedGraphic(const Point& placement, HVectorGraphic&& vg)
+		: placementPoint(placement),
+		graphic(std::move(vg))
+	{
+	}
+
+	PlacedGraphic::PlacedGraphic(Point&& placement, HVectorGraphic&& vg)
+		: placementPoint(std::move(placement)),
+		graphic(std::move(vg))
+	{
+	}
+
+
+	void PlacedGraphic::setPlacementPoint(const Point& placement) 
 	{
 		placementPoint = placement;
+	}
+
+	void PlacedGraphic::setPlacementPoint(Point&& placement)
+	{
+		placementPoint = { std::move(placement) };
 	}
 
 	Point const& PlacedGraphic::getPlacementPoint() const
@@ -24,11 +48,16 @@ namespace Framework {
 		return placementPoint; 
 	};
 
-	void PlacedGraphic::setGraphic(HVectorGraphic const& graphic) 
+	void PlacedGraphic::setGraphic(const HVectorGraphic& graphic) 
 	{
 		this->graphic = graphic;		
 	}	
 	
+	void PlacedGraphic::setGraphic(HVectorGraphic&& graphic)
+	{
+		this->graphic = { std::move(graphic) };
+	}
+
 	VectorGraphic const& PlacedGraphic::getGraphic() const
 	{
 		return (*graphic); 

@@ -1,40 +1,39 @@
 #include "Scene.h"
 
+
 namespace Framework
 {
-	Scene::LayerIterator Scene::begin()
-	{ 
-		return layers.begin(); 
-	};
-
-	Scene::LayerIterator Scene::end()
-	{
-		return layers.end(); 
-	};
-
 	Scene::Scene()
 		:width(0),
-		height(0),
-		layers({0})
+		height(0)		
 	{}
 
 	Scene::Scene(int width, int height)
 		:width(width),
-		height(height),
-		layers({0})
+		height(height)		
 	{}
 
-	void Scene::pushBack(Layer const& layer) 
+	Scene::LayerIterator Scene::begin()
+	{
+		return layers.begin();
+	};
+
+	Scene::LayerIterator Scene::end()
+	{
+		return layers.end();
+	};
+
+	void Scene::pushBack(const Layer& layer) 
 	{ 
 		layers.push_back(layer); 
 	};
 
 	void Scene::pushBack(Layer&& layer) 
 	{
-		layers.emplace_back(std::forward<Layer>(layer));
+		layers.emplace_back(std::move(layer));
 	}
 
-	void Scene::remove(Layer const& layer)
+	void Scene::remove(const Layer& layer)
 	{
 		LayerIterator it = layers.begin();
 		while (it != layers.end())
@@ -49,7 +48,7 @@ namespace Framework
 				it++;
 			}
 		}
-
+		throw std::invalid_argument("the layer to remove does not appear in the scene.");
 	}
 	
 	const Scene::LayerCollection& Scene::getLayers()
@@ -57,8 +56,12 @@ namespace Framework
 		return layers;
 	}
 
-	void Scene::setWidth(int const& width)
+	void Scene::setWidth(int width)
 	{
+		if (width < 0)
+		{
+			throw std::invalid_argument("width must be a positive integer");
+		}
 		this->width = width;
 	}
 
@@ -67,8 +70,12 @@ namespace Framework
 		return width;
 	};
 
-	void Scene::setHeight(int const& height)
+	void Scene::setHeight(int height)
 	{
+		if (height < 0)
+		{
+			throw std::invalid_argument("height must be a positive integer");
+		}
 		this->height = height;
 	}
 

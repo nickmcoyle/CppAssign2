@@ -21,7 +21,8 @@
 			PlacedGraphicIterator end();
 
 			Layer();
-			Layer(std::string const& alias);
+			Layer(const std::string& alias);
+			Layer(std::string&& alias);
 
 			Layer(const Layer& other) = default;
 			Layer(Layer&& other) = default;
@@ -29,15 +30,15 @@
 			Layer& operator=(const Layer&) = default;
 			Layer& operator=(Layer&&) = default;
 			
-			void insert(PlacedGraphic const& placedGraphic);
+			void insert(const PlacedGraphic& placedGraphic);
 			void insert(PlacedGraphic&& placedGraphic);
-			void remove(PlacedGraphic const& placedGraphic);
+			void remove(const PlacedGraphic& placedGraphic);			
 
 			const PlacedGraphicCollection& getPlacedGraphics() const;
 
-			void setAlias(std::string const& alias);
+			void setAlias(const std::string& alias);
 			void setAlias(std::string&& alias);
-			std::string const& getAlias() const;			
+			const std::string& getAlias() const;			
 
 			bool operator==(const Layer& rhs) const;
 			bool operator!=(const Layer& rhs) const;

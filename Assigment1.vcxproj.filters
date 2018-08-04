@@ -42,9 +42,6 @@
     <ClInclude Include="Parse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Exception.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -116,9 +113,6 @@
     <ClCompile Include="MyVectorGraphicTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="VectorGraphicTestOld.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="VectorGraphicTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -177,6 +171,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MySceneReaderTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyAttributeTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyElementTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MySceneTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyLayerTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyPlacedGraphicTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,47 +1,46 @@
 ﻿#pragma once
-#include "Attribute.h"
 #include <map>
 #include <string>
-#include <list>
 #include <memory>
 #include <vector>
+#include "Attribute.h"
 
 namespace Xml
 {
-	
-	class Element {		
+
+	using AttributeMap = std::map<std::string, std::string>;
+
+	class Element {	
+
 	public:
 		using HElement = std::shared_ptr<Element>;
-		using ElementList = std::vector<HElement>;
-
-	private:
-		using AttributeCollection = std::list <Attribute>;	
-
-	public:
-		Element();		
+		using ElementList = std::vector<HElement>;	
+	
+		Element() = default;
 		Element(std::string name);
 
 		Element(const Element& other) = default;
-		Element(Element&& other) = default;
+		Element(Element&& other) = default;		
 
 		Element & operator=(const Element&) = default;
 		Element & operator=(Element&&) = default;
 
-		void addChildElement(HElement const& element);
+		std::string const& getName();
 
-		ElementList const& getChildElements() const;		
-		
-	    std::map<std::string, std::string> const getAttributes();
+		void addChildElement(const HElement& element);
+		void addChildElement(HElement&& element);
 
-		std::string const& getName();		
+		ElementList const& getChildElements() const;			    	
 		
-		void addAttribute(Attribute const& attribute);
-		std::string const getAttribute(std::string const& attributeName);		
-		
+		void addAttribute(const Attribute& attribute);		
+		void addAttribute(Attribute&& attribute);		
+		std::string const getAttribute(std::string const& attributeName);	
+
+		std::map<std::string, std::string> const getAttributes();			
 
 	private:				
-		ElementList children;
-		AttributeCollection attributes;
+		ElementList children;		
+		AttributeMap attributes;
 		std::string name;
 	};
 	

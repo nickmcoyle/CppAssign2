@@ -10,7 +10,10 @@ namespace Framework {
 		
 	public:
 		PlacedGraphic();
-		PlacedGraphic(const Point& placement, HVectorGraphic vg);
+		PlacedGraphic(const Point& placement, const HVectorGraphic& vg);
+		PlacedGraphic(Point&& placement, const HVectorGraphic& vg);
+		PlacedGraphic(const Point& placement, HVectorGraphic&& vg);
+		PlacedGraphic(Point&& placement, HVectorGraphic&& vg);
 
 		PlacedGraphic(const PlacedGraphic& other) = default;
 		PlacedGraphic(PlacedGraphic&& other) = default;
@@ -19,10 +22,12 @@ namespace Framework {
 		PlacedGraphic& operator=(PlacedGraphic&&) = default;
 
 		
-		void setPlacementPoint(Point const& placement);
+		void setPlacementPoint(const Point& placement);
+		void setPlacementPoint(Point&& placement);
 		Point const& getPlacementPoint() const;
 
-		void setGraphic(HVectorGraphic const& graphic);
+		void setGraphic(const HVectorGraphic& graphic);
+		void setGraphic(HVectorGraphic&& graphic);
 		VectorGraphic const& getGraphic() const;
 
 		bool operator==(const PlacedGraphic& rhs) const;

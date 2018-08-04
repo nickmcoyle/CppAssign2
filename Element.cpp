@@ -1,75 +1,60 @@
 ﻿#include "Element.h"
-#include <algorithm>
+
 
 namespace Xml
 {
-
-	Element::Element() 
-	{}
 
 	Element::Element(std::string name)
 		:name(name)		
 	{}
 
+	std::string const& Element::getName()
+	{
+		return name;
+	}
+
 	void Element::addChildElement(HElement const& element)
 	{
+		//should we guard against an Element adding itself as a child here?
 		children.push_back(element);
+	}
+
+	void Element::addChildElement(HElement&& element)
+	{
+		//should we guard against an Element adding itself as a child here?
+		children.emplace_back(std::move(element));
 	}
 
 	Element::ElementList const& Element::getChildElements() const
 	{		
 		return children;
+	}		
+
+	std::string const Element::getAttribute(std::string const& attributeName)
+	{				
+		std::map<std::string, std::string>::iterator it = attributes.find(attributeName);
+			
+		if (it != attributes.end())
+		{
+			return attributes[attributeName];
+		}
+		else return "";
 	}
 
-	std::string const& Element::getName()
+	void Element::addAttribute(const Attribute& attribute)
+	{			
+		attributes.insert( std::pair<std::string, std::string>(attribute.getAttributeName(), attribute.getAttributeValue()));
+	}
+
+	void Element::addAttribute(Attribute&& attribute)
 	{
-		return name;
-	}		
+		attributes.emplace(std::move(std::pair<std::string, std::string>(attribute.getAttributeName(), attribute.getAttributeValue())));		
+	}
 	
 	std::map<std::string, std::string> const Element::getAttributes()
 	{
-		std::map<std::string, std::string> attributeMap;
-		AttributeCollection::iterator it = attributes.begin();
-
-		while (it != attributes.end())
-		{
-			attributeMap.emplace((*it).getAttributeName(), (*it).getAttributeValue());
-			++it;
-		}
-		return attributeMap;
+		return attributes;
 	}
+
 	
-	std::string const Element::getAttribute(std::string const& attributeName)
-	{		
-		AttributeCollection::iterator it = attributes.begin();
-		while (it != attributes.end())
-		{
-			if ((*it).getAttributeName() == attributeName)
-			{
-				return (*it).getAttributeValue();
-			}
-			++it;
-		}		
-		return "";
-	}
-
-	void Element::addAttribute(Attribute const& attribute)
-	{
-		attributes.push_back(attribute);
-	}
-	/*
-	HElement& Element::operator[](int index)
-	{
-		if (index >= children.size() || index < 0)
-		{
-			throw std::runtime_error{ "Index out of range: attempt to access ElementList" };
-		}
-		ElementList::iterator it = children.begin();
-		for (int i = 0; i < index; ++i)
-		{
-			++it;
-		}
-		return (*it);
-	}
-		*/	
 }

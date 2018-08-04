@@ -3,6 +3,19 @@
 
 namespace Framework
 {
+
+	Layer::Layer()
+		:alias("")
+	{}
+
+	Layer::Layer(const std::string& alias)
+		:alias(alias)
+	{}	
+
+	Layer::Layer(std::string&& alias)
+		: alias(std::move(alias))
+	{}
+
 	Layer::PlacedGraphicIterator Layer::begin()
 	{
 		return graphics.begin();
@@ -13,25 +26,17 @@ namespace Framework
 		return graphics.end();
 	};
 
-	Layer::Layer()
-		:alias("")
-	{}
-
-	Layer::Layer(std::string const& alias)
-		:alias(alias)
-	{}	
-
-	void Layer::insert(PlacedGraphic const& placedGraphic) 
+	void Layer::insert(const PlacedGraphic& placedGraphic) 
 	{ 
 		graphics.push_back(placedGraphic); 
 	};		
 
 	void Layer::insert(PlacedGraphic&& placedGraphic)
 	{		
-		graphics.emplace_back(std::forward<PlacedGraphic>(placedGraphic));
+		graphics.emplace_back(std::move(placedGraphic));
 	};
 	
-	void Layer::remove(PlacedGraphic const& placedGraphic)
+	void Layer::remove(const PlacedGraphic& placedGraphic)
 	{
 		PlacedGraphicIterator it = graphics.begin();
 
@@ -55,14 +60,14 @@ namespace Framework
 		return graphics;
 	}
 
-	void Layer::setAlias(std::string const& alias)
+	void Layer::setAlias(const std::string& alias)
 	{
 		this->alias = alias;
 	}
 	
 	void Layer::setAlias(std::string&& alias)
 	{
-		this->alias = alias;
+		this->alias = { std::move(alias) };
 	}
 
 	std::string const& Layer::getAlias() const 

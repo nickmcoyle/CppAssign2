@@ -1,11 +1,6 @@
 #pragma once
-#include "Element.h"
-#include "Attribute.h"
 #include "TinyXML2\Include\tinyxml2.h"
 #include "XmlReader.h"
-#include <map>
-#include <vector>
-#include <iostream>
 
 using namespace tinyxml2;
 
@@ -15,9 +10,8 @@ namespace Xml
 	{
 	public:
 		Writer();
-
-		static void writeXml(HElement root);
-		static std::ostream& writeXml(HElement root, std::ostream& stream);
+				
+		static void writeXml(HElement root, std::stringstream& stream);
 
 	private:
 	

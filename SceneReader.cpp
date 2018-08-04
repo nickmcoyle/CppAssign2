@@ -9,8 +9,8 @@ namespace Framework
 
 	Scene SceneReader::readScene(Xml::Element& root)
 	{
-		int sceneWidth = atoi(root.getAttribute("width").c_str());
-		int sceneHeight = atoi(root.getAttribute("height").c_str());
+		int sceneWidth = std::stoi(root.getAttribute("width"));
+		int sceneHeight = std::stoi(root.getAttribute("height"));
 		if (!sceneWidth || !sceneHeight)
 		{
 			throw std::invalid_argument("the scene is missing a valid width or height.");

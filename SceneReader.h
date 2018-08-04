@@ -3,7 +3,7 @@
 #include "Scene.h"
 #include "Point.h"
 #include "VectorGraphic.h"
-#include <iostream>
+
 
 namespace Framework 
 {

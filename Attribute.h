@@ -1,17 +1,14 @@
 #pragma once
 #include <string>
-#include <list>
-#include <map>
 
 namespace Xml
 {
-	using AttributeMap = std::map<std::string, std::string>;
 
 	class Attribute {
 	private:
 		
 	public:
-		Attribute();
+		Attribute() = default;
 		Attribute(std::string const& attributeName, std::string const& attributeValue);
 
 		Attribute(const Attribute& other) = default;
@@ -23,15 +20,11 @@ namespace Xml
 		std::string const& getAttributeName() const;	
 		std::string const& getAttributeValue() const;
 
-		bool empty();
-		
-		bool operator==(const Attribute& rhs);
-		bool operator!=(const Attribute& rhs);
+		bool empty();		
 
 	private:
 		std::string attributeName;
-		std::string attributeValue;		
-		AttributeMap attributes;		
+		std::string attributeValue;				
 	};
 
 	
