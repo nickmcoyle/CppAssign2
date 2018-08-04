@@ -24,11 +24,11 @@ namespace Framework {
 		
 		void setPlacementPoint(const Point& placement);
 		void setPlacementPoint(Point&& placement);
-		Point const& getPlacementPoint() const;
+		const Point& getPlacementPoint() const;
 
 		void setGraphic(const HVectorGraphic& graphic);
 		void setGraphic(HVectorGraphic&& graphic);
-		VectorGraphic const& getGraphic() const;
+		const VectorGraphic& getGraphic() const;
 
 		bool operator==(const PlacedGraphic& rhs) const;
 		bool operator!=(const PlacedGraphic& rhs) const;

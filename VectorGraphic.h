@@ -6,7 +6,7 @@
 
 namespace VG
 {
-    using Points = std::vector<Point>;	
+    using Points = std::vector<Point>;		
 	
     class VectorGraphic
     {
@@ -48,6 +48,6 @@ namespace VG
     };
 
 	//I'm not sure where this needs to go honestly. Seems like it should belong in the PlacedGraphic header, but it has to go inside the VG namespace somewhere. 
-	using HVectorGraphic = std::shared_ptr<VectorGraphic>;	
+	using HVectorGraphic = std::shared_ptr<VectorGraphic>;
 
 }

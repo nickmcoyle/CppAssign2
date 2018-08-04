@@ -5,8 +5,7 @@ namespace Xml
 {
 
 	class Attribute {
-	private:
-		
+	
 	public:
 		Attribute() = default;
 		Attribute(std::string const& attributeName, std::string const& attributeValue);
